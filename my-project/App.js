@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 
@@ -8,8 +8,13 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.text}>Hello, Devs</Text>
       <Text style={styles.text1}>14 tasks today</Text>
+      <Text style={styles.text2}>Categories</Text>
+      <Text style={styles.text3}>Exercise</Text>
+      <Text style={styles.text4}>12 tasks</Text>
       <Image style={styles.img1} source={require('./assets/photos/Profile Image.png')}/>
       <Image style={styles.img2} source={require('./assets/photos/Group 2.png')}/>
+      <Image style={styles.img3} source={require('./assets/photos/young woman working online.png')}/>
+      <Image style={styles.img4} source={require('./assets/photos/young woman working at desk.png')}/>
       <StatusBar style="auto" />
       <Icon name='search' size={30} color={'black'} style={styles.icon}/>
       <TextInput
@@ -64,7 +69,36 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 150,
     left: 320,
-
   },
- 
+  text2:{
+  fontSize: 30,
+  bottom: 150,
+  right: 100,
+  },
+  img3:{
+    position: 'absolute',
+    top: 370,
+    right: 220,
+    backgroundColor: '#fff',
+    borderRadius: 25,
+  },
+ text3:{
+  position: 'absolute',
+  top: 300,
+  right: 290,
+  fontWeight: 'bold',
+  fontSize: 20,
+ },
+ text4:{
+  position: 'absolute',
+  top: 330,
+  right: 310,
+ },
+ img4:{
+  position: 'absolute',
+  top: 370,
+  left: 220,
+  backgroundColor:'#fff',
+  borderRadius: 25,
+ },
 });
