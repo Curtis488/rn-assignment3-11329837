@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Feather';
 
 export default function App() {
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <Text style={styles.text}>Hello, Devs</Text>
       <Image style={styles.img1} source={require('./assets/photos/Profile Image.png')} />
       <Image style={styles.img2} source={require('./assets/photos/Group 2.png')} />
@@ -13,7 +13,7 @@ export default function App() {
       <Text style={styles.text2}>Categories</Text>
 
       <View style={styles.categoryContent}>
-
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <View style={styles.categoryContent1}>
           <Text style={styles.text3}>Exercise</Text>
           <Text style={styles.text4}>12 tasks</Text>
@@ -26,6 +26,43 @@ export default function App() {
           <Image style={styles.img4} source={require('./assets/photos/young woman working at desk.png')} />
         </View>
 
+        <View style={styles.categoryContent3}>
+          <Text style={styles.text7}>Cooking</Text>
+          <Text style={styles.text8}>4 tasks</Text>
+          <Image style={styles.img4} source={require('./assets/photos/cooking woman.jpg')} />
+        </View>
+
+        <View style={styles.categoryContent3}>
+          <Text style={styles.text7}>Coding</Text>
+          <Text style={styles.text8}>5 tasks</Text>
+          <Image style={styles.img4} source={require('./assets/photos/man coding.jpg')} />
+        </View>
+
+        <View style={styles.categoryContent3}>
+          <Text style={styles.text7}>Travel</Text>
+          <Text style={styles.text8}>2 tasks</Text>
+          <Image style={styles.img4} source={require('./assets/photos/travel.jpg')} />
+        </View>
+
+        <View style={styles.categoryContent3}>
+          <Text style={styles.text7}>Church</Text>
+          <Text style={styles.text8}>5 tasks</Text>
+          <Image style={styles.img4} source={require('./assets/photos/Church.jpg')} />
+        </View>
+
+        <View style={styles.categoryContent3}>
+          <Text style={styles.text7}>School</Text>
+          <Text style={styles.text8}>5 tasks</Text>
+          <Image style={styles.img4} source={require('./assets/photos/school.jpg')} />
+        </View>
+
+        <View style={styles.categoryContent3}>
+          <Text style={styles.text7}>Work</Text>
+          <Text style={styles.text8}>3 tasks</Text>
+          <Image style={styles.img4} source={require('./assets/photos/working woman.jpg')} />
+        </View>
+
+        </ScrollView>
       </View>
 
       <View style={styles.searchbox}>
@@ -36,7 +73,7 @@ export default function App() {
         />
       </View>
       <StatusBar style="auto" />
-    </ScrollView>
+    </View>
   );
 }
 
@@ -103,8 +140,8 @@ const styles = StyleSheet.create({
 
   categoryContent: {
     flexDirection: 'row',
-    marginTop: 270
-    
+    marginTop: 270,
+    maxHeight: 200
   },
 
   categoryContent1: {
@@ -124,4 +161,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 15,
   },
+ 
+  categoryContent3:{
+    backgroundColor: 'white',
+    borderRadius: 20,
+    width: 180,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginLeft: 15,
+  },
+
+  
 });
