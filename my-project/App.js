@@ -5,25 +5,38 @@ import Icon from 'react-native-vector-icons/Feather';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Text style={styles.text}>Hello, Devs</Text>
+      <Image style={styles.img1} source={require('./assets/photos/Profile Image.png')} />
+      <Image style={styles.img2} source={require('./assets/photos/Group 2.png')} />
       <Text style={styles.text1}>14 tasks today</Text>
       <Text style={styles.text2}>Categories</Text>
-      <Text style={styles.text3}>Exercise</Text>
-      <Text style={styles.text4}>12 tasks</Text>
-      <Image style={styles.img1} source={require('./assets/photos/Profile Image.png')}/>
-      <Image style={styles.img2} source={require('./assets/photos/Group 2.png')}/>
-      <Image style={styles.img3} source={require('./assets/photos/young woman working online.png')}/>
-      <Image style={styles.img4} source={require('./assets/photos/young woman working at desk.png')}/>
-      <StatusBar style="auto" />
-      <Icon name='search' size={30} color={'black'} style={styles.icon}/>
-      <TextInput
-        style={styles.input}
-        placeholder="Search..."
-      
-      />
-      
+
+      <View style={styles.categoryContent}>
+
+        <View style={styles.categoryContent1}>
+          <Text style={styles.text3}>Exercise</Text>
+          <Text style={styles.text4}>12 tasks</Text>
+          <Image style={styles.img3} source={require('./assets/photos/young woman working online.png')} />
+        </View>
+
+        <View style={styles.categoryContent2}>
+          <Text style={styles.text5}>Study</Text>
+          <Text style={styles.text6}>12 tasks</Text>
+          <Image style={styles.img4} source={require('./assets/photos/young woman working at desk.png')} />
+        </View>
+
       </View>
+
+      <View style={styles.searchbox}>
+        <Icon name='search' size={30} color={'black'} style={styles.icon} />
+        <TextInput
+          style={styles.input}
+          placeholder="Search..."
+        />
+      </View>
+      <StatusBar style="auto" />
+    </ScrollView>
   );
 }
 
@@ -31,74 +44,84 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'beige',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative', //Required for absolute positioning to work
   },
-  text:{
-    bottom: 300,
-    right: 100,
+  text: {
     fontSize: 30,
     fontWeight: 'bold',
+    position: 'absolute',
+    top: 50,
+    left: 23
   },
-  text1:{
-    bottom: 300,
-    right: 130,
+  text1: {
+    position: 'absolute',
+    top: 90,
+    left: 22
   },
-  img1:{
-   position: 'absolute',
-   top: 70,
-   right: 20,
+  img1: {
+    position: 'absolute',
+    top: 55,
+    right: 30,
+    width: 50
   },
-  
+
+  searchbox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginTop: 20,
+    width: 259,
+    height: 40,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    position: 'absolute',
+    top: 120,
+    right: 110,
+  },
+
   input: {
-    width: 220,
-    position: 'absolute',
-    top: 150,
-    left: 60,
-    height: 60,
-    backgroundColor: '#fff',
-    placeholderTextColor: '#888'
+    width: '80%',
+    paddingLeft: 60,
   },
-  icon:{
+  icon: {
     position: 'absolute',
-    bottom: 590,
-    right: 340,
+    left: 10,
   },
   img2: {
+    alignSelf: 'center',
     position: 'absolute',
-    top: 150,
-    left: 320,
+    top: 135,
+    right: 30,
   },
-  text2:{
-  fontSize: 30,
-  bottom: 150,
-  right: 100,
-  },
-  img3:{
+  text2: {
+    fontSize: 30,
+    alignSelf: 'center',
     position: 'absolute',
-    top: 370,
+    top: 200,
     right: 220,
-    backgroundColor: '#fff',
-    borderRadius: 25,
   },
- text3:{
-  position: 'absolute',
-  top: 300,
-  right: 290,
-  fontWeight: 'bold',
-  fontSize: 20,
- },
- text4:{
-  position: 'absolute',
-  top: 330,
-  right: 310,
- },
- img4:{
-  position: 'absolute',
-  top: 370,
-  left: 220,
-  backgroundColor:'#fff',
-  borderRadius: 25,
- },
+
+
+  categoryContent: {
+    flexDirection: 'row',
+    marginTop: 270
+    
+  },
+
+  categoryContent1: {
+    backgroundColor: 'white',
+    borderRadius: 20,
+    width: 180,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginLeft: 15,
+  },
+
+  categoryContent2: {
+    backgroundColor: 'white',
+    borderRadius: 20,
+    width: 180,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginLeft: 15,
+  },
 });
